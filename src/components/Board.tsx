@@ -1,3 +1,5 @@
+"use client";
+
 import { WorkItem, WorkList } from '@/lib/models/types';
 import React from 'react';
 
@@ -9,11 +11,11 @@ interface PostItProps {
 export const PostIt: React.FC<PostItProps> = ({ item, onClick }) => {
   // Calculer une légère rotation aléatoire pour un effet plus naturel
   const rotation = Math.random() * 6 - 3; // entre -3 et 3 degrés
-  
+
   return (
-    <div 
+    <div
       className="w-24 h-24 p-2 shadow-md cursor-pointer transition-transform hover:scale-105"
-      style={{ 
+      style={{
         backgroundColor: item.color,
         transform: `rotate(${rotation}deg)`,
       }}
@@ -42,9 +44,9 @@ export const Column: React.FC<ColumnProps> = ({ column }) => {
       </div>
       <div className="flex-1 p-2 overflow-y-auto">
         <div className="flex flex-wrap gap-2">
-          {column.items().map(item => (
+            {column.items().map((item: WorkItem) => (
             <PostIt key={item.id} item={item} />
-          ))}
+            ))}
         </div>
       </div>
     </div>

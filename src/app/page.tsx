@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from 'react';
 import { ScenarioForm } from '@/components/ScenarioForm';
 import { BoardView } from '@/components/Board';

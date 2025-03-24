@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from 'react';
 import { Stats } from '@/lib/models/types';
 import Chart from 'chart.js/auto';

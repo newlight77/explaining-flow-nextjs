@@ -1,3 +1,5 @@
+"use client";
+
 import { Stats } from '@/lib/models/types';
 import React from 'react';
 

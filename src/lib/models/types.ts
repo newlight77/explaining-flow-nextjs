@@ -13,13 +13,24 @@ export interface WorkList {
   id: number;
   name: string;
   necessarySkill: string;
-  items: WorkItem[];
+  items: () => WorkItem[];
   size: () => number;
   hasWork: () => boolean;
   peek: () => WorkItem | undefined;
   add: (item: WorkItem) => void;
   move: (to: WorkList, item: WorkItem) => WorkItem;
 }
+
+// export interface WorkList {
+//   id: string;
+//   name: string;
+//   necessarySkill?: string;
+//   items(): WorkItem[];
+//   hasWork(): boolean;
+//   size(): number;
+//   add(item: WorkItem): void;
+//   remove(item: WorkItem): void;
+// }
 
 export interface Worker {
   id: number;
@@ -39,7 +50,7 @@ export interface Board {
 }
 
 export interface ScenarioInput {
-  title: string;
+  title?: string; // Rendu optionnel avec le point d'interrogation
   workers: string;
   workload: string;
   wipLimit?: string;
